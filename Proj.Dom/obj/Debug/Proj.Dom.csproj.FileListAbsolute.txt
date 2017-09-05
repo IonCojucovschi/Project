@@ -1,0 +1,12 @@
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\Proj.Dom.pdb
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\FluentNHibernate.dll
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\Iesi.Collections.dll
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\NHibernate.dll
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\FluentNHibernate.pdb
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\FluentNHibernate.xml
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\Iesi.Collections.xml
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\NHibernate.xml
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\obj\Debug\Proj.Dom.pdb
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\Proj.Dom.dll.config
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\bin\Debug\Proj.Dom.dll
+D:\Cursuri\Modulul 3\practice MVC\Project\Proj.Dom\obj\Debug\Proj.Dom.dll

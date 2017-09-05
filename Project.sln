@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proj.WebUI", "..\Proj\Proj.WebUI\Proj.WebUI.csproj", "{EF91C508-494D-448C-887F-C3FE4A052EA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastMaping", "..\Proj\FastMaping\FastMaping.csproj", "{CA500446-3059-4736-9EA8-17B01F50D1EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proj.Dom", "Proj.Dom\Proj.Dom.csproj", "{3A80B64B-4FBD-4F53-8714-22DCE4B71976}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF91C508-494D-448C-887F-C3FE4A052EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF91C508-494D-448C-887F-C3FE4A052EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF91C508-494D-448C-887F-C3FE4A052EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF91C508-494D-448C-887F-C3FE4A052EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA500446-3059-4736-9EA8-17B01F50D1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA500446-3059-4736-9EA8-17B01F50D1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA500446-3059-4736-9EA8-17B01F50D1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA500446-3059-4736-9EA8-17B01F50D1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A80B64B-4FBD-4F53-8714-22DCE4B71976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A80B64B-4FBD-4F53-8714-22DCE4B71976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A80B64B-4FBD-4F53-8714-22DCE4B71976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A80B64B-4FBD-4F53-8714-22DCE4B71976}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
