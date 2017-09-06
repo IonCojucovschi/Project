@@ -15,6 +15,7 @@ namespace Proj.Dom.Repository
         IEnumerable<Users> GetByName();
         IEnumerable<Users> GetById(int ID);
         IEnumerable<Users> GetAll();
+        void Saving(Users usr);
     }
 
     public class UsersRepository : IUsersRepository
@@ -22,6 +23,7 @@ namespace Proj.Dom.Repository
          /// this rtepository may be initialized by initiatin an interface of this. in class where we want to add element of this repo.
          /// </summary>
         private readonly ISession _session;
+        private readonly ISession _sessionSave;
         public UsersRepository(ISession session)
         {
             _session = session;
@@ -29,12 +31,22 @@ namespace Proj.Dom.Repository
         public UsersRepository()
         {
             _session = SesionFactoryUpdate.GetSession();/// initializam sesiunea....
+            _sessionSave = SesionFactoryMapin.OpenSession();
+        }
+
+        public void Saving(Users usr)
+        {
+            using (var transaction = _sessionSave.BeginTransaction())
+            {
+                _sessionSave.Save(usr);
+                transaction.Commit();
+            }
         }
         public IEnumerable<Users> GetAll()
         {
             return _session.QueryOver<Users>().List();
         }
-
+       
 
         public IEnumerable<Users> GetAllUsers(int page)
         {

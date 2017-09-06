@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Proj.Dom.Domain
 {
-   public  class Users
+   public  class Users:EntityBase
     {
-        public virtual int id { get; set; }
+        
         public virtual string name { get; set; }
         public virtual string surname { get; set; }
         public virtual int age { get; set; }
@@ -17,9 +17,9 @@ namespace Proj.Dom.Domain
         public virtual UserRating Rat_ID { get; set; }
 
     }
-   public class UserRating
+   public class UserRating:EntityBase
     {
-        public virtual int id { get; set; }
+        
         public virtual int points { get; set; }
         public virtual Users userID { get; set; }
 
