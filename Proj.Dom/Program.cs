@@ -1,4 +1,5 @@
 ﻿using Proj.Dom.Repository;
+using Proj.Dom.Session;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,38 @@ namespace Proj.Dom
 {
     class Program
     {
-       static  IRoutRepository repo;
+       private static  IRoutRepository repo;
+        private static IUsersRepository usrrep;
         static void getRoutes()
+        {
+            var re = repo.ListRout();
+            re.ToString();
+        }
+        static void getRou()
         {
             var re = repo.Routes();
             re.ToString();
         }
+
+        static void getUser()
+        {
+            var usr =usrrep.GetAll();
+            usr.ToString();
+        }
         static void Main(string[] args)
         {
-            getRoutes();
+            using (var session = SesionFactoryUpdate.GetSession())
+            {
+                repo = new RoutRepository();
+                usrrep = new UsersRepository();
+                getRoutes();
+                //getRou();
+
+                Console.WriteLine("After first ...");
+               // getUser();
+                Console.ReadLine();
+            }
+            
         }
     }
 }

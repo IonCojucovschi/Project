@@ -12,7 +12,7 @@ namespace Proj.Dom.Mappings
     {
         public UsersMap()
         {
-            Id(x => x.id).Not.Nullable();
+            Id(x => x.Id).Not.Nullable();
             Map(x => x.name).Not.Nullable().Length(50);
             Map(x => x.surname).Not.Nullable().Length(50);
             Map(x => x.phone);
@@ -25,7 +25,7 @@ namespace Proj.Dom.Mappings
         {
             UserRatingMap()
             {
-                Id(x => x.id);
+                Id(x => x.Id);
                 Map(x => x.points);
                 References(x => x.userID);
             }

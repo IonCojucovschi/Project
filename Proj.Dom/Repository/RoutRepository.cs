@@ -11,28 +11,30 @@ namespace Proj.Dom.Repository
 {
     public interface IRoutRepository
     {
-        IEnumerable<Routes> Routes();
-
+        IEnumerable<string> Routes();
+        IList<Routes> ListRout();
     }
 
     public class RoutRepository : IRoutRepository
     {
         private readonly ISession _session;
-        private readonly ISession _sessionSave;
-        public RoutRepository(ISession session)
-        {
-            _session = session;
-        }
+
         public RoutRepository()
         {
             _session = SesionFactoryUpdate.GetSession();/// initializam sesiunea....
-            _sessionSave = SesionFactoryMapin.OpenSession();
+          
         }
-        public IEnumerable<Routes> Routes()
+        public IEnumerable<string> Routes()
         {
             var p = _session.QueryOver<Routes>().SelectList(
-                list => list.Select(x => x.name)).List();
+                list => list.Select(x => x.name)).List<string>();
             return p;
+        }
+        public IList<Routes> ListRout()
+        {
+           
+            return _session.QueryOver<Routes>().List<Routes>();
+
         }
     }
 }

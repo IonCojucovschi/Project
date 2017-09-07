@@ -27,15 +27,22 @@ namespace Proj.Dom.Domain
         public virtual string carNumber { get; set; }
         public virtual string Information { get; set; }
         public virtual Routes Route_ID { get; set; }
-        public virtual List<Drivers> Driver_ID { get; set; }
+        public virtual IList<Drivers> Driver_ID { get; set; }
     }
     public class Routes : EntityBase
     {
         public virtual string name { get; set; }
         public virtual string curse { get; set; }
         public virtual string oterInfor { get; set; }
-        public virtual List<Vehicle> Vehicle_ID { get; set; }
-        public virtual List<Drivers> Driver_ID { get; set; }
+        public virtual IList<Vehicle> Vehicle_ID { get; set; }
+        public virtual IList<Drivers> Driver_ID { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0,-3}\t\t{1,-3}\t\t{2,-3}", name,curse,oterInfor
+                
+                );
+        }
     }
 
 }

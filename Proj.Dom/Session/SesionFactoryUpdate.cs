@@ -34,7 +34,7 @@ namespace Proj.Dom.Session
                 .Database(MsSqlConfiguration.MsSql2012
                     .ConnectionString(conSTR).ShowSql())
                 .Mappings(x => x.FluentMappings.AddFromAssembly(typeof(Users).Assembly)
-                .AddFromAssembly(typeof(Vehicle).Assembly))
+                .AddFromAssembly(typeof(Drivers).Assembly))
                 .ExposeConfiguration(cfg =>
                 {
                     new SchemaUpdate(cfg).Execute(false, true);

@@ -11,11 +11,11 @@ namespace Proj.Dom.Repository
 {
     public interface IUsersRepository
     {
-        IEnumerable<Users> GetAllUsers(int page);
+        IEnumerable<Users> GetAllUsers(int page,int NumItemPerPage);
         IEnumerable<Users> GetByName();
-        IEnumerable<Users> GetById(int ID);
         IEnumerable<Users> GetAll();
         void Saving(Users usr);
+        void Update(Users nw);
     }
 
     public class UsersRepository : IUsersRepository
@@ -24,10 +24,7 @@ namespace Proj.Dom.Repository
          /// </summary>
         private readonly ISession _session;
         private readonly ISession _sessionSave;
-        public UsersRepository(ISession session)
-        {
-            _session = session;
-        }
+        
         public UsersRepository()
         {
             _session = SesionFactoryUpdate.GetSession();/// initializam sesiunea....
@@ -42,23 +39,36 @@ namespace Proj.Dom.Repository
                 transaction.Commit();
             }
         }
+        public void Update(Users nw)
+        {
+            using (var transaction = _sessionSave.BeginTransaction())
+            {
+                var t = _sessionSave.Load<Users>(nw.Id);
+                t.name = nw.name;
+                t.surname = nw.surname;
+                t.info = nw.info;
+                t.phone = nw.phone;
+                t.age=nw.age;
+
+
+                _sessionSave.SaveOrUpdate(t);
+                transaction.Commit();
+            }
+        }
         public IEnumerable<Users> GetAll()
         {
             return _session.QueryOver<Users>().List();
         }
        
 
-        public IEnumerable<Users> GetAllUsers(int page)
+        public IEnumerable<Users> GetAllUsers(int page, int pageSize)
         {
-            int pageSize = 5; /// numarul de itemi pe pagina
+             /// numarul de itemi pe pagina
             return _session.QueryOver<Users>().
-                OrderBy(t=>t.id).Asc.Skip((page-1)*pageSize).Take(pageSize).List<Users>();
+                OrderBy(t=>t.Id).Asc.Skip((page-1)*pageSize).Take(pageSize).List<Users>();
         }
 
-        public IEnumerable<Users> GetById(int ID)
-        {
-            return _session.QueryOver<Users>().Where(x => x.id == ID).List();
-        }
+       
 
         public IEnumerable<Users> GetByName()
         {
